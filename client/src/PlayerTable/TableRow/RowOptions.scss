@@ -1,0 +1,24 @@
+@import 'variables';
+
+.popout {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 1.5rem;
+  left: 50%;
+  padding: 0.25rem;
+  background-color: #ffffff;
+  border: 1px solid $fog;
+  border-radius: 2px;
+  z-index: 99;
+
+  &__option {
+    padding: 0.25rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: $pearl;
+    }
+  }
+}

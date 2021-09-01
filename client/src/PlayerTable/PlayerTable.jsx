@@ -6,23 +6,31 @@ import { fetchPlayersSuccess } from '../appState/actions';
 import './PlayerTable.scss';
 import TableHeader from './TableHeader';
 import TableBody from './TableBody';
+import Pagination from './Pagination';
+import { PAGE_SIZE } from '../constants';
 
 const getPlayers = (state) => state.playerIds.map((id) => state.players[id]);
 
-const PlayerTable = () => {
+const PlayerTable = ({ sort, page, setPage }) => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     (async function fetchPlayers() {
-      const response = await fetch('http://localhost:3001/players', {
-        headers: {
-          Accept: 'application/json',
-        },
-      });
+      const response = await fetch(
+        `http://localhost:3001/players?size=${PAGE_SIZE}&from=${
+          page * PAGE_SIZE
+        }&sortBy=name&sortOrder=${sort}`,
+        {
+          headers: {
+            Accept: 'application/json',
+          },
+        }
+      );
 
       const json = await response.json();
       dispatch(fetchPlayersSuccess(json));
     })();
-  }, [dispatch]);
+  }, [dispatch, page]);
 
   const players = useSelector(getPlayers);
 
@@ -34,7 +42,8 @@ const PlayerTable = () => {
       className="player-table"
     >
       <TableHeader />
-      <TableBody players={players} />
+      <TableBody players={players} sort={sort} />
+      <Pagination page={page} setPage={setPage} />
     </div>
   );
 };

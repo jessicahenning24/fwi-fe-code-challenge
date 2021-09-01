@@ -1,3 +1,5 @@
+export const PAGE_SIZE = 10;
+
 export const COUNTRIES = {
   BD: 'Bangladesh',
   BE: 'Belgium',

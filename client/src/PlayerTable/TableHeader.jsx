@@ -18,6 +18,12 @@ const TableHeader = () => (
         <th role="columnheader" className="table__header table__native">
           Native of
         </th>
+        <th
+          role="columnheader"
+          className="table__header table__options-wrapper"
+        >
+          {' '}
+        </th>
       </tr>
     </thead>
   </table>

@@ -1,0 +1,140 @@
+@import 'variables';
+
+.actions {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    height: 3.5rem;
+    position: fixed;
+    top: 3.5rem;
+    width: 100%;
+    padding: 0 3rem;
+    z-index: 9;
+  }
+
+  &__create-new {
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+  }
+  &__create-new:hover {
+    color: $alpine;
+  }
+
+  &__sort {
+    display: flex;
+    width: 15rem;
+  }
+  &__sort-label {
+    margin: auto 0.5rem;
+  }
+}
+
+.modal {
+  &__overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  &__container {
+    background-color: #ffffff;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    width: 30rem;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  &__title {
+    border-bottom: 1px solid $metal;
+    padding-bottom: 0.25rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.25rem;
+  }
+
+  &__message {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  &__player-name {
+    color: $moss;
+  }
+}
+
+.form {
+  padding: 0 1rem;
+
+  &__item {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    flex-basis: 100px;
+    margin: auto;
+  }
+
+  &__input {
+    flex-grow: 1;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 2px 8px;
+    min-height: 38px;
+    color: #333333;
+  }
+  &__input:focus {
+    border: 1px solid $alpine;
+  }
+
+  &__select {
+    flex-grow: 1;
+  }
+
+  &__btn-wrapper {
+    margin-top: 2rem;
+    text-align: right;
+  }
+
+  &__cancel-btn {
+    border: 1px solid $snow;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-right: 0.25rem;
+    background-color: $snow;
+    font-size: 1rem;
+    color: $sleeping-panther;
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+  }
+  &__cancel-btn:hover {
+    border: 1px solid $pearl;
+    background-color: $pearl;
+  }
+
+  &__submit-btn {
+    border: 1px solid $snow;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    background-color: $snow;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $sleeping-panther;
+    transition: 0.25s all ease-in-out;
+    cursor: pointer;
+  }
+  &__submit-btn:hover {
+    border: 1px solid $moss;
+    background-color: $moss;
+  }
+}
