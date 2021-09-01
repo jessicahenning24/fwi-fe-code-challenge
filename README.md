@@ -153,12 +153,17 @@ added any additional steps.
 
 ### Challenge Checklist
 
-- [ ] Create Player
-- [ ] Modify Player
-- [ ] Delete Player
-- [ ] Implement sorting (optional)
-- [ ] Lazy loading/pagination (optional)
+- [x] Create Player
+- [x] Modify Player
+- [x] Delete Player
+- [x] Implement sorting (optional)
+- [x] Lazy loading/pagination (optional)
 - [ ] Tests (optional)
+
+### Improvements That Can Be Made
+- [ ] Move page and sort states to Redux store so they don't have to be prop drilled
+- [ ] Sorting just sorts by name - extend this so all columns can be sorted
+- [ ] Allow user to chose how many players are displayed per page
 
 ## API Documentation
 
