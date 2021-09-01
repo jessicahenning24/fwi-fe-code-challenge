@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Select from 'react-select';
 import { fetchPlayersSuccess } from '../appState/actions';
 
@@ -10,9 +10,6 @@ const EditPlayerForm = ({ player, setOpenModal, sort }) => {
   const { id } = player;
 
   const dispatch = useDispatch();
-
-  const getCurrentPage = (state) => state.pagination.from;
-  const currentPage = useSelector(getCurrentPage);
 
   const [name, setName] = useState(player.name);
   const [winnings, setWinnings] = useState(player.winnings);
